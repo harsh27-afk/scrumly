@@ -1,6 +1,23 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-export default clerkMiddleware();
+// protecting routes from un authorized access
+const isProtectedRoute=createRouteMatcher([
+  "/onboarding(.*)",
+  "/organisation(.*)",
+  "/project(.*)",
+  "/issue(.*)",
+  "/sprint(.*)",
+])
+
+
+//auth() returns the current authentication state of the request.
+//auth().userId checks if a user is logged in.
+
+export default clerkMiddleware((auth,req)=>{
+      if(!auth().userId && isProtectedRoute(req)){    //If both conditions are true → The user is trying to access a protected route without logging in.
+        return auth().redirectToSignIn();
+      }
+});
 
 export const config = {
   matcher: [
