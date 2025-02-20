@@ -12,6 +12,7 @@ const UserMenu = () => {
         },
       }}
     >
+      {/* below code customizes the card component of clerk */}
       <UserButton.MenuItems>
         <UserButton.Link
           label="My Organizations"
