@@ -160,7 +160,7 @@ export default function Home() {
             Ready to Transform Your Workflow?
           </h3>
           <p className="text-xl mb-12">
-            Join thousands of teams already using ZCRUM to streamline their
+            Join thousands of teams already using SCRUMLY to streamline their
             projects and boost productivity.
           </p>
           <Link href="/onboarding">
