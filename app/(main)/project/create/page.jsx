@@ -1,5 +1,8 @@
 "use client";
 
+// This component validates the form, checks user roles, submits project data to an API, and redirects upon success. It ensures that only admins can create projects while providing feedback with loading states and error messages.🚀
+
+
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
